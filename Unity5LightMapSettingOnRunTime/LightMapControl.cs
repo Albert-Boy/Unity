@@ -40,7 +40,7 @@ public class LightMapControl : MonoBehaviour
 		MeshLightmapSetting[] savers = FindObjectsOfType<MeshLightmapSetting>();
 		for (int i = 0; i < savers.Length; i++)
 		{
-			if (isAlreadyInwillLightMapGameObjectsOrNull(savers[i]))
+			if (isAlreadyInWillLightMapGameObjectsOrNull(savers[i]))
 			{
 				continue;
 			}
@@ -49,7 +49,7 @@ public class LightMapControl : MonoBehaviour
 		}
 	}
 
-	private bool isAlreadyInwillLightMapGameObjectsOrNull(MeshLightmapSetting meshLightMapSetting)
+	private bool isAlreadyInWillLightMapGameObjectsOrNull(MeshLightmapSetting meshLightMapSetting)
 	{
 		if (meshLightMapSetting.gameObject == null)
 		{
@@ -172,7 +172,8 @@ public class LightMapControl : MonoBehaviour
 	{
 		List<GameObject> result = new List<GameObject> ();
 		Transform parentsTran = transform.parent;
-		if (parentsTran != null) {
+		if (parentsTran != null)
+		{
 			for (int i = 0; i < parentsTran.childCount; i++)
 			{
 				if (parentsTran.GetChild (i).gameObject.name == gameObject.name)
